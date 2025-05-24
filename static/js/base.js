@@ -1,11 +1,10 @@
-// Scroll Restoration
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
 window.scrollTo(0, 0);
 
-// Typewriter Effect
+// Typewriter effect
 const text = "Redefine Confidence Through the Lens";
 const target = document.getElementById("typewriter-text");
 let index = 0;
@@ -20,8 +19,9 @@ function typeLetter() {
 
 window.addEventListener("load", typeLetter);
 
-// Parallax Background
+// Parallax background
 const hero = document.querySelector('.hero');
+
 const baseX = 30;
 const baseY = 0;
 
@@ -43,59 +43,52 @@ window.addEventListener('mouseleave', () => {
   hero.style.backgroundPosition = `${baseX}% ${baseY}%`;
 });
 
-// Contact Form Submission with Animation
+// Contact form animation
+const submitBtn = document.getElementById("submitBtn");
+const submitText = document.getElementById("submitText");
+const loadingSpinner = document.getElementById("loadingSpinner");
+const successCheck = document.getElementById("successCheck");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const form = this;
 
-  const submitBtn = document.getElementById("submitBtn");
-  const submitText = document.getElementById("submitText");
-  const loadingSpinner = document.getElementById("loadingSpinner");
-  const successCheck = document.getElementById("successCheck");
+  submitBtn.classList.remove("btn-success");
+  submitText.classList.add("d-none");
+  loadingSpinner.classList.remove("d-none");
 
-  submitBtn.removeAttribute("disabled");
+  try {
+    const res = await fetch("/contact/submit/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value
+      })
+    });
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    const result = await res.json();
+    loadingSpinner.classList.add("d-none");
 
-    submitText.classList.add("d-none");
-    loadingSpinner.classList.remove("d-none");
-
-    try {
-      const res = await fetch(form.getAttribute("action") || "/contact-submit/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value,
-          message: form.message.value
-        })
-      });
-
-      const result = await res.json();
-
-      loadingSpinner.classList.add("d-none");
-
-      if (result.status === "success") {
-        successCheck.classList.remove("d-none");
-        successCheck.classList.add("fade-in");
-        form.reset();
-      } else {
-        alert(result.message || "Something went wrong.");
-        submitText.classList.remove("d-none");
-      }
-
-      setTimeout(() => {
-        successCheck.classList.add("d-none");
-        submitText.classList.remove("d-none");
-      }, 3000);
-
-    } catch (err) {
-      loadingSpinner.classList.add("d-none");
+    if (result.status === "success") {
+      successCheck.classList.remove("d-none");
+      submitBtn.classList.add("btn-success");
+      form.reset();
+    } else {
       submitText.classList.remove("d-none");
-      alert("Network error. Please try again.");
+      alert(result.message || "Something went wrong.");
     }
-  });
+
+    setTimeout(() => {
+      successCheck.classList.add("d-none");
+      submitText.classList.remove("d-none");
+      submitBtn.classList.remove("btn-success");
+    }, 3000);
+  } catch (err) {
+    loadingSpinner.classList.add("d-none");
+    submitText.classList.remove("d-none");
+    alert("Network or server error.");
+  }
 });
