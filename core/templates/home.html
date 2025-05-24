@@ -199,7 +199,11 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
 
-                <button type="submit">Send Message</button>
+                <button id="submitBtn" type="submit">
+  <span id="submitText">Send Message</span>
+  <span id="loadingSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+  <span id="successCheck" class="d-none"><i class="bi bi-check-circle-fill"></i></span>
+</button>
             </form>
             <div id="formResponse" class="text-center my-3" data-aos="fade-down"></div>
         </div>
