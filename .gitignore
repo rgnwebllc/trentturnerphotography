@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# SQLite database
+*.sqlite3
+
+# Static files (after collectstatic)
+staticfiles/
+
+# VS Code
+.vscode/
