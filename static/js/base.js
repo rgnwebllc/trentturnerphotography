@@ -89,6 +89,5 @@ document.getElementById("contactForm").addEventListener("submit", async function
   } catch (err) {
     loadingSpinner.classList.add("d-none");
     submitText.classList.remove("d-none");
-    alert("Network or server error.");
   }
 });
