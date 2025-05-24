@@ -31,6 +31,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
+
 ALLOWED_HOSTS = []
 
 
@@ -111,19 +112,28 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'WARNING',
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs/django.log',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),  # This causes the error
         },
+        'console': {
+            'class': 'logging.StreamHandler',
+        }
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
-            'level': 'WARNING',
+            'handlers': ['console'],  # Remove 'file' from here for production
+            'level': 'DEBUG',
             'propagate': True,
-        },
-    },
+        }
+    }
 }
+
+if DEBUG:
+    LOGGING['loggers']['django']['handlers'] = ['console', 'file']
+else:
+    LOGGING['loggers']['django']['handlers'] = ['console']
+
 
 
 # Internationalization
