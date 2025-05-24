@@ -19,10 +19,10 @@ def contact_submit(request):
             phone = data.get('phone')
             message = data.get('message')
 
-            print(f"Dummy contact received:\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}")
+            # Send email, save to DB, etc.
 
-            return JsonResponse({'status': 'success', 'message': 'Your message has been sent successfully!'})
+            return JsonResponse({'status': 'success', 'message': 'Message sent successfully!'})
         except Exception as e:
-            return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
 
-    return JsonResponse({'status': 'error', 'message': 'Invalid method'}, status=405)
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
