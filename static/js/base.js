@@ -43,3 +43,49 @@ window.addEventListener('mousemove', (e) => {
 window.addEventListener('mouseleave', () => {
   hero.style.backgroundPosition = `${baseX}% ${baseY}%`;
 });
+
+const submitBtn = document.getElementById("submitBtn");
+const submitText = document.getElementById("submitText");
+const loadingSpinner = document.getElementById("loadingSpinner");
+const successCheck = document.getElementById("successCheck");
+
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const form = this;
+
+    // Start loading
+    submitText.classList.add("d-none");
+    loadingSpinner.classList.remove("d-none");
+
+    const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value
+    };
+
+    const res = await fetch("{% url 'contact_submit' %}", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await res.json();
+
+    // Stop spinner
+    loadingSpinner.classList.add("d-none");
+
+    if (result.status === 'success') {
+        successCheck.classList.remove("d-none");
+        form.reset();
+    } else {
+        submitText.classList.remove("d-none");
+        alert(result.message);  // Optional: more graceful error handling
+    }
+
+    // Revert after 3 seconds
+    setTimeout(() => {
+        successCheck.classList.add("d-none");
+        submitText.classList.remove("d-none");
+    }, 3000);
+});
