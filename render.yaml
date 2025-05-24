@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: trentturnerphotography
+    env: python
+    repo: https://github.com/rgnwebllc/trentturnerphotography.git
+    branch: main
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      python manage.py migrate && gunicorn turner.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: turner.settings
+      - key: SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: trentturnerphotography.onrender.com
+    buildFilter:
+      paths:
+        - core/*
+        - templates/*
+        - static/*
+        - manage.py
