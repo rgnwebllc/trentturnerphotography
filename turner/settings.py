@@ -107,32 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),  # This causes the error
-        },
-        'console': {
-            'class': 'logging.StreamHandler',
-        }
-    },
     'loggers': {
-        'django': {
-            'handlers': ['console'],  # Remove 'file' from here for production
-            'level': 'DEBUG',
-            'propagate': True,
-        }
-    }
+        'urllib3.connectionpool': {
+            'level': 'WARNING',  # Suppress DEBUG-level messages
+        },
+    },
 }
-
-if DEBUG:
-    LOGGING['loggers']['django']['handlers'] = ['console', 'file']
-else:
-    LOGGING['loggers']['django']['handlers'] = ['console']
 
 
 
