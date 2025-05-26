@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = ['trentturnerphotography.onrender.com']
+ALLOWED_HOSTS = ['trentturnerphotography.onrender.com', '127.0.0.1', '10.0.0.7']
 
 
 # Application definition
