@@ -11,7 +11,10 @@
     </div>
 </div>
 <!-- About -->
-<section class="about-section">
+<section class="about-section d-flex">
+    <div class="container" style="padding: 0;">
+        <img style="width: auto; height: 350px; border-radius: 50%; margin: 0;" src="{% static 'images/tturner.png' %}" alt="T Turner">
+    </div>
     <div class="container">
         <h2 class="section-title" data-aos="fade-in" data-aos-delay="200">About Trent Turner Photography</h2>
         <p class="section-text" data-aos="fade-in" data-aos-delay="400">
@@ -31,41 +34,75 @@
                 lighting, or dramatic tones. This is where your confidence meets art.
             </p>
         </div>
-        <div class="style-image" data-aos="fade-left">
-            <img src="{% static 'images/style.png' %}" alt="Styled shoot example">
-        </div>
-        <div class="style-image" data-aos="fade-right">
-            <img src="{% static 'images/style1.png' %}" alt="Styled shoot example">
-        </div>
-        <div class="style-image" data-aos="fade-left">
-            <img src="{% static 'images/style2.png' %}" alt="Styled shoot example">
+        <div class="wrap-at-768">
+            <div class="style-image" data-aos="fade-left">
+                <img src="{% static 'images/style.png' %}" alt="Styled shoot example">
+            </div>
+            <div class="style-image" data-aos="fade-right">
+                <img src="{% static 'images/style1.png' %}" alt="Styled shoot example">
+            </div>
+            <div class="style-image" data-aos="fade-left">
+                <img src="{% static 'images/style2.png' %}" alt="Styled shoot example">
+            </div>
         </div>
     </div>
 </section>
 <section class="testimonial-section">
     <div class="container">
         <h2 class="section-title" data-aos="fade-in">Client Confidence Stories</h2>
-        <div class="testimonial-grid" data-aos="fade-up">
-            <div class="testimonial-card">
-                <p class="testimonial-quote">“Trent is professional and reliable! He’s been doing my professional
-                    portraits for the last 8 years. Highly recommend”</p>
-                <p class="testimonial-name">— Ron A.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-quote">“Trent Turner listens to what you want and makes it your vision into
-                    reality. This young man is an amazing photographer and person.”</p>
-                <p class="testimonial-name">— Melissa B.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-quote">“Client focused photographer that delivers quality optics. He makes you
-                    feel comfortable and confident with every pose!”</p>
-                <p class="testimonial-name">— Rosa L.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-quote">“Great photographer. Pictures come out great even before the edits. Will
-                    definitely be using him for all my photography needs.”</p>
-                <p class="testimonial-name">— Raven R.</p>
-            </div>
+
+        <div class="swiper testimonial-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide testimonial-card">
+                    <p class="testimonial-quote">Trent is professional and reliable! He’s been doing my professional
+                        portraits for the last 8 years. Highly recommend</p>
+                    <p class="testimonial-name">— Ron A.</p>
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonial-card">
+                    <p class="testimonial-quote">Trent Turner listens to what you want and makes it your vision into
+                        reality. This young man is an amazing photographer and person.</p>
+                    <p class="testimonial-name">— Melissa B.</p>
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonial-card">
+                    <p class="testimonial-quote">Client focused photographer that delivers quality optics. He makes you
+                        feel comfortable and confident with every pose!</p>
+                    <p class="testimonial-name">— Rosa L.</p>
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonial-card">
+                    <p class="testimonial-quote">Great photographer. Pictures come out great even before the edits. Will
+                        definitely be using him for all my photography needs.</p>
+                    <p class="testimonial-name">— Raven R.</p>
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div><br><br>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
