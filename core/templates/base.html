@@ -165,6 +165,53 @@
         });
 
     </script>
+<footer class="footer bg-dark text-light py-5 mt-5">
+    <div class="container text-center text-md-start">
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Trent Turner Photography</h5>
+                <p class="small">Empowering portraits that celebrate confidence, style, and individuality. Based in Hobart, IN — serving NW Indiana & beyond.</p>
+            </div>
+            <div class="col-md-3">
+                <h6 class="fw-bold">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <div class="container">
+                    <li><a href="{% url 'home' %}" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Style</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Testimonials</a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="fw-bold">Contact</h6>
+                <ul class="list-unstyled small">
+                    <div class="container">
+                    <li><i class="bi bi-geo-alt me-2"></i>1265 S Lake Park Ave, Hobart, IN</li>
+                    <li><i class="bi bi-telephone me-2"></i><a href="tel:+12193343357" class="text-light text-decoration-none">+1 (219) 334-3357</a></li>
+                    <li><i class="bi bi-envelope me-2"></i><a href="mailto:info@trentturnerphotography.com" class="text-light text-decoration-none">info@trentturnerphotography.com</a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-md-2 text-center text-md-start">
+                <h6 class="fw-bold">Follow</h6>
+                <a href="https://www.instagram.com/trentturnerphotography?igsh=MmZxa2pvcHBnYzRv" target="_blank" class="text-light fs-5 me-3">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="text-light fs-5">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+
+        <hr class="border-secondary my-4">
+
+        <div class="text-center small text-muted">
+            &copy; {{ now|date:"Y" }} Trent Turner Photography. All rights reserved. | Built by <a href="https://www.regionwebllc.com" class="text-light text-decoration-underline">Region Web LLC</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 
