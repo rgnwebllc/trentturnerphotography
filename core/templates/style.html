@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Style - Trent Turner Photography{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="py-5 style-hero text-center text-white" style="background-color: #1e293b;" data-aos="fade-down">
+  <div class="container" style="padding-top: 50px;">
+    <h1 class="display-4 fw-bold">My Photography Style</h1><hr>
+    <p class="lead text-white-50">Bold. Confident. Real. Here's what you can expect from your session.</p>
+  </div>
+</section>
+
+<!-- Style Breakdown -->
+<section class="py-5 bg-dark text-white" data-aos="fade-up">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning"><i class="bi bi-palette-fill me-2"></i>Color & Tone</h5>
+        <p class="text-white-50">Rich contrast, deep blacks, warm highlights. I love creating drama through light and shadow — no flat filters here.</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning"><i class="bi bi-person-bounding-box me-2"></i>Posing & Direction</h5>
+        <p class="text-white-50">Confident posture, intentional expression, real energy. I guide you with pro tips and hype so you never feel awkward.</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning"><i class="bi bi-camera-reels me-2"></i>Lighting & Backdrop</h5>
+        <p class="text-white-50">I use both studio lighting and natural light depending on the shoot. Clean backdrops, dramatic shadows, and curated angles are my jam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="py-5 text-white text-center" style="background-color: #0f172a;" data-aos="fade-up">
+  <div class="container">
+    <h2 class="mb-4">Visual Style in Action</h2>
+    <div class="row g-3">
+      <div class="col-sm-6 col-md-4">
+        <img src="{% static 'images/style1.png' %}" alt="Style sample 1" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="{% static 'images/style.png' %}" alt="Style sample 2" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="{% static 'images/style2.png' %}" alt="Style sample 3" class="img-fluid rounded shadow">
+      </div>
+    </div>
+    <a href="#" class="btn btn-outline-light mt-4">View Full Portfolio</a>
+  </div>
+</section>
+
+<!-- Moodboard / Style Themes -->
+<section class="py-5 bg-dark text-white" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-4">Visual Themes I Love</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="p-4 border rounded h-100">
+          <h5 class="text-warning fw-bold">📸 Studio Power Portraits</h5>
+          <p class="text-white-50">Clean backdrops, sharp lighting, high fashion energy. These are signature shots that pop on social and print.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded h-100">
+          <h5 class="text-warning fw-bold">🌇 Natural Light Drama</h5>
+          <p class="text-white-50">Golden hour tones, deep emotion, and real expressions captured outdoors or on location.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust / Style Philosophy -->
+<section class="py-5 text-white text-center" style="background-color: #1e293b;" data-aos="zoom-in">
+  <div class="container">
+    <p class="fs-4 fst-italic">"My goal isn’t to just make you look good — it’s to make you feel powerful. Whether it's moody, vibrant, classic, or creative — I shoot to elevate your presence."</p>
+    <footer class="text-white-50">– Trent Turner</footer>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-dark text-white text-center" data-aos="zoom-in">
+  <div class="container">
+    <h2 class="mb-3">Like What You See?</h2>
+    <p class="lead text-white-50">Let’s make your next session unforgettable. You bring the energy — I’ll handle the lighting.</p>
+    <a href="#" class="btn btn-outline-light px-4 py-2 mt-3">Book a Session</a>
+  </div>
+</section>
+
+{% endblock %}

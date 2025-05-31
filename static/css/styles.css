@@ -1,4 +1,12 @@
 /* Main Elements */
+
+* {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
     overflow-x: hidden;
     /* Prevent horizontal scroll */
@@ -12,6 +20,7 @@ body {
     background-color: #000;
     /* DO NOT set overflow-y or height unless you really need to */
 }
+
 
 [data-aos] {
     overflow-anchor: none;
@@ -62,6 +71,78 @@ body {
     }
 }
 
+.btn-glow {
+  display: inline-block;
+  color: #f7ede2;
+  border: 2px solid #f7ede2;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: color 0.3s ease-in-out;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: #f6bd60;
+  z-index: -1;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-glow:hover {
+  color: #0f172a;
+}
+
+.btn-glow:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+.btn-trace {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  color: #f7ede2;
+  background-color: transparent;
+  border: 2px solid #f6bd60;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.btn-trace::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #f6bd60;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.btn-trace:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
 #submitBtn {
   display: inline-flex;
   align-items: center;
@@ -92,7 +173,9 @@ body {
     left: 0 !important;
     width: 100% !important;
     z-index: 10 !important;
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.219) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .navbar-collapse {
@@ -249,6 +332,28 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.about-hero {
+  position: relative;
+  background-image: url("/static/images/camera.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+.about-hero .container {
+  position: relative;
+  z-index: 1; /* ensures text sits above the overlay */
+}
+
 @media (max-width: 991.98px) {
     .about-section {
         flex-direction: column;
@@ -286,6 +391,28 @@ body {
     background: #F1F1F1;
     color: #222;
     padding: 5rem 2rem;
+}
+
+.style-hero {
+  position: relative;
+  background-image: url("/static/images/lights.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.style-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+.style-hero .container {
+  position: relative;
+  z-index: 1; /* ensures text sits above the overlay */
 }
 
 .style-grid {
@@ -471,6 +598,28 @@ body {
     text-align: center;
 }
 
+.testimonials-hero {
+  position: relative;
+  background-image: url("/static/images/wedding.png");
+  background-size: cover;
+  background-position: top;          /* ensures top of image is visible */
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.testimonials-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+.testimonials-hero .container {
+  position: relative;
+  z-index: 1; /* ensures text sits above the overlay */
+}
+
 .gallery-section .hero-cta{
     width: 100%;
 }
@@ -498,6 +647,30 @@ body {
 .gallery-grid img:hover {
     transform: scale(1.05);
 }
+
+/* Testimonials */
+.testimonials-hero {
+  position: relative;
+  background-image: url("/static/images/people.jpg");
+  background-size: cover;
+  background-position: center;          /* ensures top of image is visible */
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.testimonials-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+.testimonials-hero .container {
+  position: relative;
+  z-index: 1; /* ensures text sits above the overlay */
+}
+
 /* Booking */
 .booking-section {
   position: relative;

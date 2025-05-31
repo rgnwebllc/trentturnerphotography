@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portfolio - Trent Turner Photography{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-5 portfolio-hero text-center text-white" style="background-color: #1e293b;" data-aos="fade-down">
+  <div class="container" style="padding-top: 50px;">
+    <h1 class="display-4 fw-bold">Portfolio</h1><hr>
+    <p class="lead text-white-50">A look at my latest work — bold, confident, and 100% you.</p>
+  </div>
+</section>
+
+<!-- Portfolio Gallery -->
+<section class="py-5 bg-dark text-white" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Image 1 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/style.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/style.png' %}" alt="Portrait 1" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/style1.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/style1.png' %}" alt="Portrait 2" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/style2.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/style2.png' %}" alt="Portrait 3" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/hero.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/hero.png' %}" alt="Portrait 4" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/style.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/style.png' %}" alt="Portrait 5" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="col-sm-6 col-md-4">
+        <a href="{% static 'images/style1.png' %}" class="glightbox" data-gallery="portfolio">
+        <img src="{% static 'images/style1.png' %}" alt="Portrait 6" class="img-fluid rounded shadow" loading="lazy">
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Optional Category Filters (future enhancement) -->
+    <!--
+    <div class="text-center mt-4">
+      <button class="btn btn-outline-light mx-2">Portraits</button>
+      <button class="btn btn-outline-light mx-2">Lifestyle</button>
+      <button class="btn btn-outline-light mx-2">Studio</button>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-white text-center" style="background-color: #1e293b;" data-aos="zoom-in">
+  <div class="container">
+    <h2 class="mb-3">Love the Look?</h2>
+    <p class="lead text-white-50">Let’s create something powerful together. Bold, authentic, unforgettable.</p>
+    <a href="#" class="btn btn-outline-light px-4 py-2 mt-3">Book a Session</a>
+  </div>
+</section>
+
+{% endblock %}

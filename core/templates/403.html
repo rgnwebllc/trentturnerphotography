@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="text-center text-white d-flex flex-column justify-content-center align-items-center vh-100" style="background-color: #1f2937;">
+  <div data-aos="zoom-in" data-aos-duration="800">
+    <h1 class="display-3 fw-bold">403</h1>
+    <p class="lead mb-4">You don’t have permission to view this page. (It's not finished yet.)</p>
+    <a href="{% url 'home' %}" class="btn btn-outline-light">Return Home</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="py-5 text-center text-white pricing-hero" style="background-image: url('static/images/hero.png'); background-size: cover; background-position: center;">
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold">Photography Packages</h1>
+    <p class="lead text-white-50">Choose the session that fits your vision.</p>
+  </div>
+</section>
+
+<!-- Pricing Packages -->
+<section class="container my-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Session Options</h2>
+    <p class="text-muted">Each package is crafted to give you an unforgettable experience and beautiful results.</p>
+  </div>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title">Mini Session</h5>
+          <p class="text-muted">$150</p>
+          <ul class="list-unstyled small">
+            <li>30 minutes</li>
+            <li>1 outfit</li>
+            <li>5 edited photos</li>
+            <li>Online gallery</li>
+          </ul>
+          <a href="#" class="btn btn-outline-dark mt-3">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow border-primary border-2">
+        <div class="card-body text-center">
+          <h5 class="card-title">Standard Session</h5>
+          <p class="text-muted">$300</p>
+          <ul class="list-unstyled small">
+            <li>1 hour session</li>
+            <li>2 outfits</li>
+            <li>15 edited photos</li>
+            <li>Location of your choice</li>
+            <li>Online gallery</li>
+          </ul>
+          <a href="#" class="btn btn-primary mt-3">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title">Creative Session</h5>
+          <p class="text-muted">$500</p>
+          <ul class="list-unstyled small">
+            <li>Up to 2 hours</li>
+            <li>Unlimited outfits</li>
+            <li>25+ edited photos</li>
+            <li>Creative direction</li>
+            <li>Studio or outdoor</li>
+            <li>Online gallery</li>
+          </ul>
+          <a href="#" class="btn btn-outline-dark mt-3">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add-ons -->
+<section class="container my-5">
+  <div class="text-center mb-4">
+    <h3 class="fw-bold">Add-Ons</h3>
+    <p class="text-muted">Customize your session further with these upgrades.</p>
+  </div>
+  <div class="row justify-content-center text-center">
+    <div class="col-md-3">
+      <div class="border rounded p-3 h-100">+ $50 — Rush Delivery (3 days)</div>
+    </div>
+    <div class="col-md-3">
+      <div class="border rounded p-3 h-100">+ $75 — Extra Retouching (5 images)</div>
+    </div>
+    <div class="col-md-3">
+      <div class="border rounded p-3 h-100">+ $100 — Full Gallery Download</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

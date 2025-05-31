@@ -31,8 +31,10 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
+handler403 = 'core.views.custom_permission_denied_view'
 
-ALLOWED_HOSTS = ['trentturnerphotography.onrender.com']
+
+ALLOWED_HOSTS = ['trentturnerphotography.onrender.com', 'localhost', '192.168.249.249']
 
 
 # Application definition
