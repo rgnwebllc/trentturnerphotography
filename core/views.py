@@ -4,10 +4,11 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.utils.timezone import now
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {"now": now()})
 
 @csrf_exempt
 def contact_submit(request):
