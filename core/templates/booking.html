@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book a Session{% endblock %}
+
+{% block content %}
+<section class="py-5 text-white" style="background-color: #1e293b;">
+  <div class="container py-5" style="max-width: 720px;">
+    <h1 class="display-5 fw-bold text-center mb-4">Book Your Session</h1><hr>
+
+    <!-- Step 1: Select Type -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Select a Session Type</label>
+      <div class="d-flex flex-wrap gap-3">
+        <button class="btn btn-outline-light">Portrait</button>
+        <button class="btn btn-outline-light">Couples</button>
+        <button class="btn btn-outline-light">Creative</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Choose Date -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Pick a Date</label>
+      <input type="date" class="form-control bg-dark text-white border-secondary">
+    </div>
+
+    <!-- Step 3: Pick a Time -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Pick a Time Slot</label>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-warning">2:00 PM</button>
+        <button class="btn btn-outline-warning">3:30 PM</button>
+        <button class="btn btn-outline-warning">5:00 PM</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Info Form -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Your Info</label>
+      <input type="text" class="form-control mb-2" placeholder="Your Name">
+      <input type="email" class="form-control mb-2" placeholder="Your Email">
+      <input type="tel" class="form-control mb-2" placeholder="Your Phone">
+      <textarea class="form-control" rows="3" placeholder="Notes (optional)"></textarea>
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center mt-4">
+      <button class="btn btn-success px-5 py-2">Confirm Booking</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -21,3 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
+
+handler403 = 'core.views.custom_permission_denied_view'
+
+handler404 = 'core.views.custom_404_view'
